@@ -13,6 +13,17 @@
      expect(entry.email).to eq expected_email
    end
 
+   describe "#nuke" do
+     it "should delete all entries" do
+       book.add entry("Frederick Lazo", "415-618-9340", "fredlazo@yahoo.com")
+       book.add entry("Donald Trump", "212-618-9340", "trump@yahoo.com")
+       book.add entry("Steph Curry", "510-618-9340", "steph@yahoo.com")
+     end
+
+     book.nuke
+     expect(book.entries.size).to eq 0
+   end
+
    describe "attributes" do
      it "responds to entries" do
        expect(book).to respond_to(:entries)

@@ -19,6 +19,10 @@ class AddressBook
     @entries.delete(delete_entry)
   end
 
+  def nuke
+    @entries = []
+    
+  end
 
 
 
@@ -69,7 +73,7 @@ class AddressBook
       end
 
       # #5
-      return nil      
+      return nil
     end
 
 end
